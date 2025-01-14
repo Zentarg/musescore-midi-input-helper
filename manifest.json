@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Musescore Midi Input Helper",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Adds 'autoplay' feature that waits for your keyboards midi input to match the notes on the preview keyboard",
   "permissions": [
     "activeTab",
