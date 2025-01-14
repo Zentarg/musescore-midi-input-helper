@@ -307,7 +307,7 @@ function validateCurrentMidiInput() {
     if (
         (wrongInputs === 0 && !isPlaying) ||
         (wrongInputs > 0 && isPlaying) ||
-        activeKeyboardHighlightedKeys.length == 0
+        (activeKeyboardHighlightedKeys.length == 0 && !isPlaying)
     ) {
         playButton.click();
     }
