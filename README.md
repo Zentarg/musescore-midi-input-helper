@@ -1,31 +1,22 @@
-# My Chrome Extension
-
-This is a simple Chrome extension that demonstrates basic functionality using JavaScript.
-
-## Project Structure
-
-```
-my-chrome-extension
-├── src
-│   ├── background.js      # Background script for handling events and state
-│   ├── content.js         # Content script for manipulating web page DOM
-│   └── popup.js           # Script for the popup interface
-├── manifest.json          # Configuration file for the Chrome extension
-└── README.md              # Documentation for the project
-```
+# Musescore Midi Input Helper
+Adds 'autoplay' feature that waits for your keyboards midi input to match the notes on the preview keyboard
 
 ## Installation
 
-1. Clone the repository or download the source code.
+### Manual Installation
+
+1. Download the zip from the release.
 2. Open Chrome and navigate to `chrome://extensions/`.
 3. Enable "Developer mode" using the toggle in the top right corner.
-4. Click on "Load unpacked" and select the `my-chrome-extension` directory.
+4. Click on "Load unpacked" and select the `Musescore-Midi-Input-Helper` directory.
 
 ## Usage
 
-- Click on the extension icon in the Chrome toolbar to open the popup.
-- The background script will run in the background and handle any necessary events.
-- The content script will interact with the web pages as specified.
+1. Open up a sheet in musescore.
+1. Click the calibrate button next to the play controls.
+1. Press the keys on your midi input device that matches the key on the preview keyboard.
+1. Press autoplay when the calibration is done
+1. Match the preview keyboards inputs
 
 ## License
 
