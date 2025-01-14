@@ -140,6 +140,8 @@ function toggleAutoplay() {
         if (!keyboardWrapper) {
             document.getElementById(toggleKeyboardWrapperId).click();
             return;
+        } else {
+            this.observeKeyboardChanges();
         }
     }
     else
@@ -216,7 +218,6 @@ function initCalibration() {
 
     const keys = keyboardWrapper.getElementsByTagName('path');
     calibratingKeys = activeKeyboardHighlightedKeys = Array.from(keys).map(key => key.id);
-    console.log(calibratingKeys);
 
     this.showNextCalibrationKey();
     
@@ -241,7 +242,6 @@ function setCalibratedMidiKey(midiKey) {
         midiKey: midiKey,
         keyboardKey: currentKey
     }
-    console.log("pushing", pair);
     calibratedKeys.push(pair);
     if (calibratingKeys.length === 0) {
         this.finishCalibration();
@@ -272,7 +272,6 @@ function validateCurrentMidiInput() {
     });
 
     let wrongInputs = activeKeyboardHighlightedKeys.length;
-    console.log(activeMidiKeys, activeKeyboardHighlightedKeys);
     activeMidiKeys.forEach(key => {
         let calibratedKey = calibratedKeys.find(calibratedKey => calibratedKey.midiKey === key);
         if (!calibratedKey) {
@@ -305,13 +304,11 @@ function validateCurrentMidiInput() {
         return;
     }
 
-    console.log(wrongInputs, isPlaying)
-
     if (
         (wrongInputs === 0 && !isPlaying) ||
-        (wrongInputs > 0 && isPlaying)
+        (wrongInputs > 0 && isPlaying) ||
+        activeKeyboardHighlightedKeys.length == 0
     ) {
-        console.log("Should do stuff");
         playButton.click();
     }
 }
